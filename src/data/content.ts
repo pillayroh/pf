@@ -363,43 +363,36 @@ export const thoughts = {
 export interface BlogPost {
   id: string
   title: string
+  /** one or two sentences shown on the card */
   excerpt: string
+  /** display date, e.g. "Nov 3, 2026" */
   date: string
   readingTime: string
   tags: string[]
-  status: CaseStatus
+  /** where the full post lives (opens in a new tab) */
+  url: string
+  /** platform label shown on the card, e.g. "Medium" */
+  platform: string
+  /** cover image URL (or a path under /public) */
+  thumbnail: string
+  thumbnailAlt: string
 }
 
+/** Newest first. Add a new object at the top to publish a post. */
 export const blogPosts: BlogPost[] = [
   {
-    id: 'trust-is-a-feature',
-    title: 'Trust Is a Feature: Designing AI People Actually Adopt',
+    id: 'linkedin-find-nearby',
+    title:
+      'LinkedIn Had the Answer to My Social Battery Problem. Then It Took It Away',
     excerpt:
-      'Notes on why adoption of AI tooling depends far more on transparency, exception handling, and predictable behavior than on raw model quality.',
-    date: 'Draft',
-    readingTime: '6 min read',
-    tags: ['AI UX', 'Adoption', 'Trust'],
-    status: 'Drafting',
-  },
-  {
-    id: 'discovery-questions',
-    title: 'The Discovery Questions I Ask Before Writing Any Code',
-    excerpt:
-      'A short, reusable list of questions I use to map a workflow, find the real bottleneck, and avoid building the wrong thing.',
-    date: 'Planned',
-    readingTime: '4 min read',
-    tags: ['Customer Discovery', 'Product'],
-    status: 'Coming Soon',
-  },
-  {
-    id: 'ship-then-learn',
-    title: 'Ship, Then Learn: How I Use Deployment as a Research Tool',
-    excerpt:
-      'Why I treat the first deployment as the beginning of discovery, not the end - and how production feedback reshapes the roadmap.',
-    date: 'Planned',
-    readingTime: '5 min read',
-    tags: ['Iteration', 'Feedback Loop', 'Deployment'],
-    status: 'Coming Soon',
+      'LinkedIn once had "Find Nearby", a way to discover people around you at events. It was pulled during COVID and never came back. Here\'s why I think it deserves a second shot.',
+    date: 'Nov 3, 2026',
+    readingTime: '3 min read',
+    tags: ['LinkedIn', 'Product Thinking', 'Networking'],
+    url: 'https://medium.com/@rohankumarraj/linkedin-had-the-answer-to-my-social-battery-problem-then-it-took-it-away-61a7fe4ca013',
+    platform: 'Medium',
+    thumbnail: 'https://cdn-images-1.medium.com/max/1024/0*ytElzdWXF1a2ru3n',
+    thumbnailAlt: 'Cover photo by Olena Kholina on Unsplash',
   },
 ]
 
